@@ -70,7 +70,8 @@ async function loadTasks() {
     taskListUl.innerHTML = '<li>Loading tasks...</li>';
 
     try {
-        const tasksCollection = await db.collection("tasks").orderBy("name").get();
+        // Changed orderBy to "text"
+        const tasksCollection = await db.collection("tasks").orderBy("text").get();
         if (tasksCollection.empty) {
             taskListUl.innerHTML = '<li>No tasks found.</li>';
             return;
@@ -79,13 +80,17 @@ async function loadTasks() {
         tasksCollection.forEach(doc => {
             const task = doc.data();
             const listItem = document.createElement('li');
-            listItem.textContent = task.name || "Unnamed task";
+            // Changed task.name to task.text
+            listItem.textContent = task.text || "Unnamed task";
             taskListUl.appendChild(listItem);
         });
         console.log("Tasks loaded successfully.");
     } catch (error) {
         console.error("Error loading tasks: ", error);
-        taskListUl.innerHTML = '<li>Error loading tasks. Check console for details.</li>';
+        // It's possible an error occurs if 'text' field is missing and orderBy("text") is used.
+        // Firestore requires the field used in orderBy to exist on the document for it to be included in results of that query.
+        // If this is an issue, a more complex solution or ensuring all task documents have a 'text' field is needed.
+        taskListUl.innerHTML = '<li>Error loading tasks. Ensure tasks have a "text" field for sorting. Check console for details.</li>';
     }
 }
 
