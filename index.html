@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firestore Task & Money Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Task & Money Tracker</h1>
+    </header>
+
+    <main>
+        <section id="task-list-section">
+            <h2>Task List</h2>
+            <ul id="task-list">
+                <!-- Tasks will be loaded here by JavaScript -->
+                <li>Loading tasks...</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="money-management-section">
+            <h2>Money Management</h2>
+
+            <div id="money-adder">
+                <h3>Add New Entry</h3>
+                <form id="money-form">
+                    <div>
+                        <label for="money-amount">Amount ($):</label>
+                        <input type="number" id="money-amount" name="moneyAmount" step="0.01" placeholder="e.g., 50.00 or -20.00" required>
+                    </div>
+                    <div>
+                        <label for="money-description">Description:</label>
+                        <input type="text" id="money-description" name="moneyDescription" placeholder="e.g., Sold BREG machine" required>
+                    </div>
+                    <button type="submit">Add Entry</button>
+                </form>
+                <div id="money-form-message" class="form-message"></div> {/* New message area */}
+            </div>
+
+            <div id="money-viewer">
+                <h3>Money Log</h3>
+                <ul id="money-log-list">
+                    <!-- Money entries will be loaded here by JavaScript -->
+                    <li>Loading money log...</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Firebase Powered App</p>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

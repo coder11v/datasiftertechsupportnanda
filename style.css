@@ -1,0 +1,153 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Nicer font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Slightly softer background */
+    color: #333;
+}
+
+header {
+    background: #007bff; /* A more modern blue */
+    color: #fff;
+    padding: 1.2rem 0; /* Slightly more padding */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 600; /* Bolder title */
+}
+
+main {
+    padding: 1.5rem; /* More padding */
+    max-width: 800px;
+    margin: 30px auto; /* More margin */
+    background: #fff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Softer shadow */
+}
+
+section {
+    margin-bottom: 2.5rem; /* Increased spacing */
+}
+
+h2 {
+    color: #007bff; /* Consistent blue for headings */
+    border-bottom: 2px solid #eee; /* Thicker border */
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem; /* Spacing below h2 */
+}
+
+h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+#task-list, #money-log-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li, #money-log-list li {
+    padding: 0.8rem 0.5rem; /* More padding */
+    border-bottom: 1px solid #e0e0e0; /* Lighter border */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover */
+}
+
+#task-list li:hover, #money-log-list li:hover {
+    background-color: #f9f9f9; /* Subtle hover background */
+}
+
+#task-list li:last-child, #money-log-list li:last-child {
+    border-bottom: none;
+}
+
+/* Money log specific styles */
+#money-log-list .positive-amount {
+    color: #28a745; /* Green for positive */
+    font-weight: 500;
+}
+
+#money-log-list .negative-amount {
+    color: #dc3545; /* Red for negative */
+    font-weight: 500;
+}
+
+/* Form specific styles */
+#money-form div {
+    margin-bottom: 1rem;
+}
+
+#money-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500; /* Slightly bolder labels */
+}
+
+#money-form input[type="number"],
+#money-form input[type="text"] {
+    width: 100%;
+    padding: 0.7rem; /* More padding in inputs */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Slightly darker border */
+    border-radius: 4px; /* More rounded inputs */
+    margin-bottom: 0.5rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#money-form input[type="number"]:focus,
+#money-form input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Focus ring */
+}
+
+#money-form button {
+    background: #28a745; /* Green for add button */
+    color: white;
+    padding: 0.8rem 1.5rem; /* More padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem; /* Larger font */
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 0.5rem;
+}
+
+#money-form button:hover {
+    background: #218838; /* Darker green on hover */
+}
+
+/* Form message area styles */
+.form-message {
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: none; /* Hidden by default */
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: block; /* Show when class is added */
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block; /* Show when class is added */
+}
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem; /* More padding */
+    background: #343a40; /* Darker footer */
+    color: #fff;
+    margin-top: 3rem; /* More margin */
+    font-size: 0.9rem;
+}
